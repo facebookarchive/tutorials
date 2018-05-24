@@ -177,14 +177,14 @@ data,_ = AddInputLayer(test_model,1,TEST_LMDB,'lmdb')
 # Populate the model helper obj with the init net stuff, which provides the 
 #    weight initializations for the model
 init_net_proto = caffe2_pb2.NetDef()
-with open(INIT_NET, "r") as f:
+with open(INIT_NET, "rb") as f:
     init_net_proto.ParseFromString(f.read())
 test_model.param_init_net = test_model.param_init_net.AppendNet(core.Net(init_net_proto))
 
 # Populate the model helper obj with the predict net stuff, which defines 
 #    the structure of the model
 predict_net_proto = caffe2_pb2.NetDef()
-with open(PREDICT_NET, "r") as f:
+with open(PREDICT_NET, "rb") as f:
     predict_net_proto.ParseFromString(f.read())
 test_model.net = test_model.net.AppendNet(core.Net(predict_net_proto))
 
@@ -255,7 +255,7 @@ softmax = Add_Original_CIFAR10_Model(train_model, data, 10, 32, 32, 3)
 
 # Populate the param_init_net of the model obj with the contents of the init net
 init_net_proto = caffe2_pb2.NetDef()
-with open(INIT_NET, "r") as f:
+with open(INIT_NET, "rb") as f:
     init_net_proto.ParseFromString(f.read())
 tmp_init_net = core.Net(init_net_proto)
 train_model.param_init_net = train_model.param_init_net.AppendNet(tmp_init_net)
