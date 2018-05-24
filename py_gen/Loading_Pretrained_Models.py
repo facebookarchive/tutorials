@@ -20,9 +20,9 @@
 # 
 # 1. Read the init and predict protobuf (.pb) files of the pretrained model
 # 
-#         with open("init_net.pb") as f:
+#         with open("init_net.pb", "rb") as f:
 #             init_net = f.read()
-#         with open("predict_net.pb") as f:
+#         with open("predict_net.pb", "rb") as f:
 #             predict_net = f.read()        
 # 
 # 2. Initialize a Predictor in your workspace with the blobs from the protobufs
@@ -233,9 +233,9 @@ print("NCHW image (ready to be used as input): ", img.shape)
 
 
 # Read the contents of the input protobufs into local variables
-with open(INIT_NET) as f:
+with open(INIT_NET, "rb") as f:
     init_net = f.read()
-with open(PREDICT_NET) as f:
+with open(PREDICT_NET, "rb") as f:
     predict_net = f.read()
 
 # Initialize the predictor from the input protobufs
