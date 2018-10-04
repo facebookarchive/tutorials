@@ -12,13 +12,13 @@ import numpy as np
 import unittest
 
 
-class TestWhere(hu.HypothesisTestCase):
+class TestAdd5(hu.HypothesisTestCase):
 
     @given(N=st.integers(min_value=1, max_value=10),
            C=st.integers(min_value=1, max_value=10),
            # NB: use hg.gcs when built with CUDA
            **hu.gcs_cpu_only)
-    def test_where(self, N, C, gc, dc):
+    def test_add5(self, N, C, gc, dc):
         # set th seed
         np.random.seed(101)
         # TODO: test double, int and int64

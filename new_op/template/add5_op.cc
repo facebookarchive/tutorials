@@ -38,8 +38,6 @@ bool Add5GradientOp<CPUContext>::DoRunWithType() {
   return true;
 }
 
-namespace {
-
 REGISTER_CPU_OPERATOR(Add5, Add5Op<CPUContext>);
 OPERATOR_SCHEMA(Add5)
     .NumInputs(1)
@@ -114,6 +112,4 @@ class GetAdd5Gradient final : public GradientMakerBase {
 
 REGISTER_GRADIENT(Add5, GetAdd5Gradient);
 
-
-} // namespace
 } // namespace caffe2
