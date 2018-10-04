@@ -30,9 +30,6 @@ bool Add5Op<CUDAContext>::DoRunWithType() {
   return true;
 }
 
-REGISTER_CUDA_OPERATOR(Add5, Add5Op<CUDAContext>);
-
-
 template <typename T>
 __global__ void Add5GradientKernel(const int N, const T* data, T* output) {
   CUDA_1D_KERNEL_LOOP(i, N) {
@@ -59,6 +56,7 @@ bool Add5GradientOp<CUDAContext>::DoRunWithType() {
   return true;
 }
 
+REGISTER_CUDA_OPERATOR(Add5, Add5Op<CUDAContext>);
 REGISTER_CUDA_OPERATOR(Add5Gradient, Add5GradientOp<CUDAContext>);
 
 } // namespace caffe2

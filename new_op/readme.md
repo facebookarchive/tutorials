@@ -24,11 +24,12 @@ You can run the `Add5` operator using `python run_add5_op.py`
 
 You can follow examples in [caffe2/python/operator_test/](https://github.com/pytorch/pytorch/tree/master/caffe2/operators) to write test
 code for `Add5` and `Add5Gradient` ops. There are three important functions to use:
--- assertDeviceChecks
--- assertGradientChecks
--- assertReferenceChecks
+* assertDeviceChecks
+* assertGradientChecks
+* assertReferenceChecks
 
 Find more details in the [source code](https://github.com/pytorch/pytorch/blob/master/caffe2/python/hypothesis_test_util.py)
+For buck users, please check ifbpy to run the python script.
 
 ## Step 4: fill the missing logic for CUDA part and build
 
