@@ -7,3 +7,7 @@ In order to run tutorials, use jupyter. For more details refer to https://caffe2
 Python scripts should be generated out of these tutorials in order to make it easy to review the changes. In order to make this process automatic, you could patch your jupyter config using [this file](jupyter_notebook_config.py)
 
 If you would like to run sync manually, run this [script](tutorials_to_script_converter.py). It will regenerate python scripts for all the tutorials in this folder
+
+## License
+
+The Caffe2 Tutorials is [Apache 2.0 licensed](https://github.com/caffe2/caffe2/blob/master/LICENSE).
